@@ -255,7 +255,7 @@ class ObjectHandleStrategyRTC
   // <rtc-template block="service_declare">
   /*!
    */
-  ObjectHandleStrategyServiceSVC_impl m_ObjectHandleStrategyService;
+  Manipulation_ObjectHandleStrategyServiceSVC_impl m_ObjectHandleStrategyService;
   
   // </rtc-template>
 
