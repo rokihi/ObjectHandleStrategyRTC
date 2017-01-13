@@ -1,31 +1,15 @@
+// -*-C++-*-
 
-class EndEffectorPoseGenerator{
-public:
-	virtual void determineEndEffectorPose(Manipulation::ObjectInfo obj, Manipulation::EndEffectorPose pos) = 0;
-};
+#include "EndEffectorPoseGenerator.h"
 
-class LinearTransform : public EndEffectorPoseGenerator{
-private:
-	Manipulation::EndEffectorPose m_eePos;
-	Manipulation::ObjectInfo m_objInfo;
+void LinearTransform::determineEndEffectorPose(Manipulation::ObjectInfo obj, Manipulation::EndEffectorPose_out pos){
 
-	double xOffset = 0;
-	double yOffset = 0;
-	double zOffset = -50;
-	double pitchOffset = 0;
-	double rollOffset = 0;
-	double yawOffset = 0;
+	pos.pose.position.x = obj.pose.position.x + xOffset;
+	pos.pose.position.y = obj.pose.position.y + yOffset;
+	pos.pose.position.z = obj.pose.position.z + zOffset;
 
-public:
-	void determineEndEffectorPose(Manipulation::ObjectInfo obj, Manipulation::EndEffectorPose pos){
+	pos.pose.orientation.p = obj.pose.orientation.p + pitchOffset;
+	pos.pose.orientation.r = obj.pose.orientation.r + rollOffset;
+	pos.pose.orientation.y = obj.pose.orientation.y + yawOffset;
+}
 
-		pos.Pose.position.x = obj.pose.position.x + xOffset;
-		pos.Pose.position.y = obj.pose.position.y + yOffset;
-		pos.Pose.position.z = obj.pose.position.z + zOffset;
-
-		pos.Pose.orientation.p = obj.pose.orientation.p + pOffset;
-		pos.Pose.orientation.r = obj.pose.orientation.r + rOffset;
-		pos.Pose.orientation.y = obj.pose.orientation.y + yOffset;
-	}
-
-};

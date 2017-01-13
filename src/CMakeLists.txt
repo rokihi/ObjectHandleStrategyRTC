@@ -1,4 +1,4 @@
-set(comp_srcs ObjectHandleStrategyRTC.cpp TrajectoryPlannerSVC_impl.cpp )
+set(comp_srcs ObjectHandleStrategyRTC.cpp TrajectoryPlannerSVC_impl.cpp EndEffectorPoseGenerator.cpp)
 set(standalone_srcs ObjectHandleStrategyRTCComp.cpp)
 
 if (DEFINED OPENRTM_INCLUDE_DIRS)

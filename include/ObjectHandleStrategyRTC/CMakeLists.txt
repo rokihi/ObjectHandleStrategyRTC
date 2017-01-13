@@ -1,4 +1,4 @@
-set(hdrs ObjectHandleStrategyRTC.h
+set(hdrs ObjectHandleStrategyRTC.h EndEffectorPoseGenerator.h
     PARENT_SCOPE
     TrajectoryPlannerSVC_impl.h
     )

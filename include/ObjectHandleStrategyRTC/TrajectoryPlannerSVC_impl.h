@@ -14,6 +14,9 @@
 #ifndef TRAJECTORYPLANNERSVC_IMPL_H
 #define TRAJECTORYPLANNERSVC_IMPL_H
  
+#include "EndEffectorPoseGenerator.h"
+class EndEffectorPoseGenerator;
+class LinearTransform;
 
 /*!
  * @class ObjectHandleStrategyServiceSVC_impl
@@ -27,6 +30,7 @@ class Manipulation_ObjectHandleStrategyServiceSVC_impl
    // Make sure all instances are built on the heap by making the
    // destructor non-public
    //virtual ~ObjectHandleStrategyServiceSVC_impl();
+
    EndEffectorPoseGenerator* m_generator;
 
  public:

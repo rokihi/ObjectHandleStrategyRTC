@@ -7,7 +7,6 @@
 
 #include "TrajectoryPlannerSVC_impl.h"
 
-
 /*
  * Example implementational code for IDL interface Manipulation::ObjectHandleStrategyService
  */
@@ -29,6 +28,8 @@ Manipulation_ObjectHandleStrategyServiceSVC_impl::~Manipulation_ObjectHandleStra
 Manipulation::ReturnValue* Manipulation_ObjectHandleStrategyServiceSVC_impl::getApproachOrientation(const Manipulation::ObjectInfo& objInfo, Manipulation::EndEffectorPose& eePos)
 {
 	Manipulation::ReturnValue* result;
+	m_generator = new LinearTransform();
+	m_generator->determineEndEffectorPose(objInfo, eePos);
 	return result;
 }
 
