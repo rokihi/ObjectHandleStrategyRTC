@@ -44,7 +44,7 @@ class Manipulation_ObjectHandleStrategyServiceSVC_impl
    virtual ~Manipulation_ObjectHandleStrategyServiceSVC_impl();
 
    // attributes and operations
-   Manipulation::ReturnValue* getApproachOrientation(const Manipulation::ObjectInfo& objInfo, Manipulation::EndEffectorPose& eePos);
+   Manipulation::ReturnValue* getApproachOrientation(const Manipulation::ObjectInfo& objInfo, Manipulation::EndEffectorPose_out eePos);
 
 };
 

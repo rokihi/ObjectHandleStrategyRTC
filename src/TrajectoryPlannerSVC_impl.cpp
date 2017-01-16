@@ -25,12 +25,15 @@ Manipulation_ObjectHandleStrategyServiceSVC_impl::~Manipulation_ObjectHandleStra
 /*
  * Methods corresponding to IDL attributes and operations
  */
-Manipulation::ReturnValue* Manipulation_ObjectHandleStrategyServiceSVC_impl::getApproachOrientation(const Manipulation::ObjectInfo& objInfo, Manipulation::EndEffectorPose& eePos)
+Manipulation::ReturnValue* Manipulation_ObjectHandleStrategyServiceSVC_impl::getApproachOrientation(const Manipulation::ObjectInfo& objInfo, Manipulation::EndEffectorPose_out eePos)
 {
-	Manipulation::ReturnValue* result;
 	m_generator = new LinearTransform();
-	m_generator->determineEndEffectorPose(objInfo, eePos);
-	return result;
+	m_generator->generateEndEffectorPose(objInfo, eePos);
+
+	Manipulation::ReturnValue_var result(new Manipulation::ReturnValue());
+	result->id = Manipulation::OK;
+	result->message = CORBA::string_dup("OK");
+	return result._retn();
 }
 
 
