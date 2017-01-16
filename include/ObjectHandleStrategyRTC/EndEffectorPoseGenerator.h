@@ -17,7 +17,7 @@ public:
 
 class LinearTransform : public EndEffectorPoseGenerator{
 private:
-	double xOffset = -50.0;
+	double xOffset = -0.050;
 	double yOffset = 0.0;
 	double zOffset = 0.0;
 	double pitchOffset = 0.0;
