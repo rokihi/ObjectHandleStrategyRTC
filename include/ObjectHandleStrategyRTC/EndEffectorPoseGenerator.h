@@ -20,9 +20,9 @@ private:
 	double xOffset = -0.050;
 	double yOffset = 0.0;
 	double zOffset = 0.0;
-	double pitchOffset = 0.0;
-	double rollOffset = 0.0;
-	double yawOffset = 0.0;
+	double pitchOffset = 1.56;
+	double rollOffset =3.14;
+	double yawOffset =3.14;
 
 public:
 	void generateEndEffectorPose(Manipulation::ObjectInfo obj, Manipulation::EndEffectorPose_out pos);
